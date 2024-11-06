@@ -36,6 +36,10 @@ public class DB_GUI_Controller implements Initializable {
     @FXML
     MenuBar menuBar;
     @FXML
+    private Button editButton;
+    @FXML
+    private Button deleteButton;
+    @FXML
     private TableView<Person> tv;
     @FXML
     private TableColumn<Person, Integer> tv_id;
@@ -80,6 +84,8 @@ public class DB_GUI_Controller implements Initializable {
         major.setText("");
         email.setText("");
         imageURL.setText("");
+        editButton.setDisable(true);
+        deleteButton.setDisable(true);
     }
 
     @FXML
@@ -157,6 +163,8 @@ public class DB_GUI_Controller implements Initializable {
         major.setText(p.getMajor());
         email.setText(p.getEmail());
         imageURL.setText(p.getImageURL());
+        editButton.setDisable(false);
+        deleteButton.setDisable(false);
     }
 
     public void lightTheme(ActionEvent actionEvent) {
